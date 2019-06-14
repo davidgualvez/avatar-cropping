@@ -25,7 +25,8 @@ function readFile(input) {
 $uploadCrop = $('#upload-demo').croppie({
     viewport: {
         width: 150,
-        height: 200,
+        height: 150,
+        type: 'circle'
     },
     enforceBoundary: false,
     enableExif: true
@@ -47,8 +48,8 @@ $('#cancelCropBtn').data('id', imageId); readFile(this); });
 $('#cropImageBtn').on('click', function (ev) {
     $uploadCrop.croppie('result', {
         type: 'base64',
-        format: 'jpeg',
-        size: {width: 150, height: 200}
+        format: 'png',
+        size: {width: 150, height: 150}
     }).then(function (resp) {
         console.log(resp);
         sendToServer(resp);
