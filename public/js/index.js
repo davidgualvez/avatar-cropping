@@ -61,7 +61,7 @@ $('#cropImageBtn').on('click', function (ev) {
 function sendToServer(image_data){
 
     var data = {
-        image : encodeURIComponent(image_data),
+        image : image_data,
         tag : 'avatar'
     };
 
